@@ -22,7 +22,7 @@ class AlerWidgetViewModel extends BaseViewModel {
   void popHome() {
      _isAuto = !_isAuto;
     autoToggle(_isAuto);
-    _naviigatorService.navigateToHomeView();
+    _naviigatorService.pushNamedAndRemoveUntil(Routes.homeView);
   }
 
   void autoToggle(bool value) {

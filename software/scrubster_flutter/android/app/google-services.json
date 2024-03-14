@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "745037626839",
+    "project_id": "scrubster-625ae",
+    "storage_bucket": "scrubster-625ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745037626839:android:6ebc6194437d0b50fa5f92",
+        "android_client_info": {
+          "package_name": "com.example.scrubster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFZ7BFjZiPTuJ3vsK9-60MJQNOyzZ_dNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

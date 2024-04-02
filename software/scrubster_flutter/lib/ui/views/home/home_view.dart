@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scrubster/ui/common/ui_helpers.dart';
+import 'package:scrubster/ui/smart_widgets/online_status.dart';
 import 'package:scrubster/ui/views/home/widgets/mainButtons/rotateButton/left_rotate_button.dart';
 import 'package:scrubster/ui/views/home/widgets/mainButtons/rotateButton/right_rotate_button.dart';
 import 'package:scrubster/ui/views/home/widgets/mainButtons/stop_button.dart';
@@ -24,9 +25,15 @@ class HomeView extends StackedView<HomeViewModel> {
       appBar: AppBar(
         title: const Padding(
           padding: EdgeInsets.all(10),
-          child: Text(
-            "Scrubster",
-            style: TextStyle(fontWeight: FontWeight.bold),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Scrubster",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              IsOnlineWidget(),
+            ],
           ),
         ),
       ),
@@ -114,7 +121,7 @@ class HomeView extends StackedView<HomeViewModel> {
                       style: const ButtonStyle(
                           backgroundColor:
                               MaterialStatePropertyAll(Colors.grey)),
-                      child: const Text('Automatic'),
+                      child: const Text('Automatic',style: TextStyle(color: Colors.white),),
                     ),
                     horizontalSpaceTiny,
                     const Text(

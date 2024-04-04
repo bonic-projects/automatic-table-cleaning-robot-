@@ -11,7 +11,7 @@ class MovementDatabaseService with ListenableServiceMixin {
   DeviceMovement? get node => _node;
 
   void setupNodeListening() {
-    DatabaseReference starCountRef = _db.ref('/devices/$dbCode/signal');
+    DatabaseReference starCountRef = _db.ref('/devices/$dbCode/data');
 
     try {
       starCountRef.onValue.listen((DatabaseEvent event) {
@@ -27,22 +27,22 @@ class MovementDatabaseService with ListenableServiceMixin {
   }
 
   void setDeviceData(DeviceMovement data) {
-    DatabaseReference dataRef = _db.ref('/devices/$dbCode/signal');
+    DatabaseReference dataRef = _db.ref('/devices/$dbCode/data');
     dataRef.update(data.toJson());
   }
 
   void setStepper1Data(Stepper1Movement data) {
-    DatabaseReference dataRef = _db.ref('/devices/$dbCode/signal');
+    DatabaseReference dataRef = _db.ref('/devices/$dbCode/data');
     dataRef.update(data.toJson());
   }
 
   void setStepper2Data(Stepper2Movement data) {
-    DatabaseReference dataRef = _db.ref('/devices/$dbCode/signal');
+    DatabaseReference dataRef = _db.ref('/devices/$dbCode/data');
     dataRef.update(data.toJson());
   }
 
   void setAuto(IsAuto data) {
-    DatabaseReference dataRef = _db.ref('/devices/$dbCode/signal');
+    DatabaseReference dataRef = _db.ref('/devices/$dbCode/data');
     dataRef.update(data.tojson());
   }
 }

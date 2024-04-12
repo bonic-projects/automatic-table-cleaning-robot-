@@ -32,5 +32,6 @@ import 'package:scrubster/ui/views/aler_widget/aler_widget_view.dart';
     StackedDialog(classType: InfoAlertDialog),
     // @stacked-dialog
   ],
+  logger: StackedLogger()
 )
 class App {}

@@ -17,7 +17,7 @@ class MovementDatabaseService with ListenableServiceMixin {
       starCountRef.onValue.listen((DatabaseEvent event) {
         if (event.snapshot.exists) {
           _node = DeviceMovement.fromMap(event.snapshot.value as Map);
-          //    log.v(_node?.lastSeen); //data['time']
+             print(_node?.lastSeen); //data['time']
           notifyListeners();
         }
       });

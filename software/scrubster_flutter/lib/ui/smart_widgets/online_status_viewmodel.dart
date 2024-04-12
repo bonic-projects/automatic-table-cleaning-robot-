@@ -5,11 +5,12 @@ import 'package:scrubster/services/movement_database_service.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../app/app.locator.dart';
+import '../../app/app.logger.dart';
 
 
 
 class HomeViewModel extends BaseViewModel {
- // final log = getLogger('StatusWidget');
+ final log = getLogger('StatusWidget');
 
   final _dbService = locator<MovementDatabaseService>();
 
@@ -23,7 +24,7 @@ class HomeViewModel extends BaseViewModel {
     if (time == null) return false;
     final DateTime now = DateTime.now();
     final difference = now.difference(time).inSeconds;
-    // log.i("Status $difference");
+    log.i("Status $difference");
     return difference.abs() <= 5;
   }
 

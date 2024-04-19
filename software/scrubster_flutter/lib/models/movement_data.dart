@@ -5,10 +5,7 @@ class DeviceMovement {
 
   //
 
-  DeviceMovement({
-    required this.direction,
-    this.lastSeen
-  });
+  DeviceMovement({required this.direction, this.lastSeen});
 
 //
   factory DeviceMovement.fromMap(Map data) {

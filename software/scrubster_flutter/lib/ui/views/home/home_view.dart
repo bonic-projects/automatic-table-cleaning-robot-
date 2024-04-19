@@ -107,29 +107,51 @@ class HomeView extends StackedView<HomeViewModel> {
                 ),
                 const Divider(),
                 verticalSpaceSmall,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
                   children: [
-                    horizontalSpaceTiny,
-                    const Text(
-                      "Stepper1",
-                      style: TextStyle(fontSize: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        horizontalSpaceTiny,
+                        const Text(
+                          "Stepper1",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        horizontalSpaceSmall,
+                        ElevatedButton(
+                          onPressed: viewModel.isAutoButton,
+                          style: const ButtonStyle(
+                              backgroundColor:
+                                  MaterialStatePropertyAll(Colors.grey)),
+                          child: const Text(
+                            'Automatic',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        horizontalSpaceSmall,
+                        const Text(
+                          'Stepper2',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ],
                     ),
-                    horizontalSpaceSmall,
                     ElevatedButton(
-                      onPressed: viewModel.isAutoButton,
+                      onPressed: () {
+                        viewModel.isRight('w');
+                      },
                       style: const ButtonStyle(
                           backgroundColor:
                               MaterialStatePropertyAll(Colors.grey)),
-                      child: const Text('Automatic',style: TextStyle(color: Colors.white),),
+                      child: const Text(
+                        'Pump',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
-                    horizontalSpaceTiny,
-                    const Text(
-                      'Stepper2',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    horizontalSpaceTiny
                   ],
+                ),
+                const SizedBox(
+                  height: 10,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -154,7 +176,7 @@ class HomeView extends StackedView<HomeViewModel> {
                             Icons.arrow_downward,
                             size: 50,
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Column(
@@ -177,7 +199,7 @@ class HomeView extends StackedView<HomeViewModel> {
                             Icons.arrow_downward,
                             size: 50,
                           ),
-                        )
+                        ),
                       ],
                     )
                   ],
